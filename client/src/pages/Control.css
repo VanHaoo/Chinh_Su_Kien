@@ -1,0 +1,43 @@
+.control-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-app);
+}
+
+.control-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.control-bottom {
+  display: flex;
+  height: var(--timeline-h);
+  min-height: var(--timeline-h);
+}
+
+.control-bottom .timeline {
+  flex: 1;
+}
+
+.control-statusbar {
+  height: 24px;
+  min-height: 24px;
+  background: var(--bg-panel-alt);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.control-page--loading {
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}

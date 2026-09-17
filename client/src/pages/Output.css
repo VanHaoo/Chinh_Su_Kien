@@ -1,0 +1,54 @@
+.output-stage {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.output-waiting {
+  font-family: var(--font-ui, sans-serif);
+  font-size: 13px;
+  color: #3a3a3a;
+  letter-spacing: 0.04em;
+}
+
+.output-canvas {
+  position: relative;
+  background: #000;
+}
+
+.output-canvas--fade {
+  animation: output-fade-in 260ms ease-out;
+}
+
+@keyframes output-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.output-object {
+  position: absolute;
+}
+
+.output-conn-dot {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2a2a2a;
+}
+
+.output-conn-dot--off {
+  background: #4a1f1f;
+}

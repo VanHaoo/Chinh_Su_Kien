@@ -1,0 +1,113 @@
+.canvas-wrap {
+  flex: 1;
+  background: var(--bg-inset);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.canvas-toolbar {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  pointer-events: none;
+}
+
+.canvas-stage {
+  position: relative;
+  background: #000;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transition: outline 0.15s ease;
+}
+
+.canvas-stage--dragover {
+  outline: 2px dashed var(--accent, #3b82f6) !important;
+  outline-offset: -2px;
+}
+
+.canvas-object {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: grab;
+  background: #202226;
+  touch-action: none;
+}
+
+.canvas-object:active {
+  cursor: grabbing;
+}
+
+.canvas-object--selected {
+  outline: 1.5px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.canvas-resize-handle {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--bg-app);
+  border: 1.5px solid var(--accent);
+  border-radius: 1px;
+  z-index: 2;
+}
+
+.canvas-resize-handle--nw {
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+.canvas-resize-handle--ne {
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+.canvas-resize-handle--sw {
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+.canvas-resize-handle--se {
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+}
+
+.canvas-rotate-handle {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg-app);
+  border: 1.5px solid var(--accent);
+  cursor: grab;
+  padding: 0;
+  z-index: 2;
+}
+
+.canvas-rotate-handle::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1px;
+  height: 18px;
+  background: var(--accent);
+  transform: translateX(-50%);
+}

@@ -1,0 +1,109 @@
+@import "./styles/stage.css";
+
+/* =========================================================================
+   Design tokens
+   Palette is a warm-neutral graphite (not pure black) with a single cool
+   accent reserved for selection/active state, and a functional red reserved
+   only for LIVE status — it is a signal color, not decoration.
+   ========================================================================= */
+:root {
+  /* Surfaces */
+  --bg-app: #17191c;
+  --bg-panel: #1c1f23;
+  --bg-panel-alt: #212429;
+  --bg-inset: #131417;
+  --bg-hover: #262a30;
+  --bg-active: #2b3038;
+
+  /* Borders */
+  --border: #2f333a;
+  --border-strong: #3c414a;
+
+  /* Text */
+  --text-primary: #e6e8eb;
+  --text-secondary: #9298a3;
+  --text-muted: #656b76;
+
+  /* Accent (selection / interactive) */
+  --accent: #4d8cff;
+  --accent-dim: #2c4d8a;
+  --accent-soft: rgba(77, 140, 255, 0.14);
+
+  /* Status */
+  --live: #e5484d;
+  --live-dim: rgba(229, 72, 77, 0.16);
+  --success: #3dd68c;
+  --success-dim: rgba(61, 214, 140, 0.14);
+  --warning: #e8a33d;
+
+  /* Type */
+  --font-ui: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* Layout */
+  --header-h: 44px;
+  --timeline-h: 96px;
+  --media-panel-w: 260px;
+  --properties-panel-w: 280px;
+  --layers-panel-w: 220px;
+
+  --radius-sm: 3px;
+  --radius-md: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+input,
+select,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-inset);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a505a;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}

@@ -1,0 +1,43 @@
+{
+  "name": "led-controller",
+  "version": "1.0.0",
+  "description": "LED Controller Desktop Application (Control + Output)",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "build:client": "npm run build --prefix client",
+    "build:exe": "npm run build:client && electron-builder --win"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "nanoid": "^6.0.1",
+    "socket.io": "^4.8.3",
+    "sql.js": "^1.12.0"
+  },
+  "devDependencies": {
+    "electron": "^34.3.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.ledcontroller.app",
+    "productName": "LED Controller",
+    "asar": false,
+    "directories": {
+      "output": "dist-release"
+    },
+    "files": [
+      "electron/**/*",
+      "server/**/*",
+      "client/dist/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "dir",
+      "sign": null,
+      "forceCodeSigning": false,
+      "verifyUpdateCodeSignature": false
+    }
+  }
+}

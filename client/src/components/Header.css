@@ -1,0 +1,231 @@
+.header {
+  height: var(--header-h);
+  min-height: var(--header-h);
+  background: var(--bg-panel-alt);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-logo-mark {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.header-logo-text {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.header-menu {
+  display: flex;
+  height: 100%;
+}
+
+.header-menu-item {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0 12px;
+  height: 100%;
+  font-size: 12.5px;
+}
+
+.header-menu-item:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.header-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+.header-status-dot--offline {
+  background: var(--text-muted);
+}
+
+.header-status-dot--live {
+  background: var(--live);
+  box-shadow: 0 0 0 3px var(--live-dim);
+}
+
+.header-status-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.header-live-btn {
+  background: var(--live-dim);
+  border: 1px solid var(--live);
+  color: var(--live);
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.header-live-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.header-live-btn:not(:disabled):hover {
+  background: var(--live);
+  color: #17191c;
+}
+
+.header-menu {
+  position: relative;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.header-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 220px;
+  max-width: 280px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+  padding: 6px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-dropdown-item {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  text-align: left;
+  font-size: 12.5px;
+  padding: 7px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-dropdown-item:hover:not(:disabled) {
+  background: var(--bg-hover);
+}
+
+.header-dropdown-item:disabled {
+  opacity: 0.5;
+}
+
+.header-dropdown-item--danger {
+  color: var(--live);
+}
+
+.header-dropdown-label {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  padding: 6px 8px 2px;
+}
+
+.header-dropdown-list {
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.header-dropdown-hint {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  padding: 6px 8px;
+}
+
+.header-dropdown-sep {
+  height: 1px;
+  background: var(--border);
+  margin: 5px 2px;
+}
+
+.header-open-output-btn {
+  background: var(--bg-inset);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+
+.header-open-output-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.header-prop-toggle-btn {
+  background: var(--bg-inset);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+
+.header-prop-toggle-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.header-prop-toggle-btn--active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft, rgba(59, 130, 246, 0.15));
+}
